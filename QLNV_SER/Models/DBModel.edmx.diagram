@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c0d7e2e72fe643e4a502ba76eea035f1" Name="Diagram1">
+        <EntityTypeShape EntityType="HumanResourceModel.Role" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HumanResourceModel.RoleSub" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HumanResourceModel.User" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HumanResourceModel.Emp" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Allowance" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.AllowanceSub" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.AnnualLeaf" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Area" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Attach" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.CalSheet" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Comp" Width="1.5" PointX="9.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Contract" Width="1.5" PointX="9.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Degree" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Department" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.District" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Ethnic" Width="1.5" PointX="11.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Nation" Width="1.5" PointX="11.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Position" Width="1.5" PointX="6.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Province" Width="1.5" PointX="11.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Salary" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Setting" Width="1.5" PointX="13.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.TimeSheet" Width="1.5" PointX="13.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HumanResourceModel.Ward" Width="1.5" PointX="2.75" PointY="14.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HumanResourceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Allowances">
+          <Key>
+            <PropertyRef Name="AllowanceID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAOrder" Type="int" />
+          <Property Name="AllowanceCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="AllowanceName" Type="nvarchar" MaxLength="100" />
+          <Property Name="AllowanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="AllowanceSubs">
+          <Key>
+            <PropertyRef Name="AllowanceSubID" />
+          </Key>
+          <Property Name="FK_AllowanceID" Type="int" />
+          <Property Name="FK_EmpID" Type="int" />
+          <Property Name="AllowanceSubID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AllowanceSubSalary" Type="money" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="AnnualLeaves">
+          <Key>
+            <PropertyRef Name="AnnualLeaveID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AnnualLeaveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_EmpAnnualLeave" Type="float" />
+          <Property Name="FK_EmpID" Type="int" />
+          <Property Name="AnnualLeaveTotal" Type="float" />
+          <Property Name="AnnualLeaveUsed" Type="float" />
+          <Property Name="AnnualLeaveRemain" Type="float" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="AreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="100" />
+          <Property Name="AreaAddr" Type="nvarchar(max)" />
+          <Property Name="FK_CompCode" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Attachs">
+          <Key>
+            <PropertyRef Name="AttachID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AttachID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AttachName" Type="nvarchar" MaxLength="100" />
+          <Property Name="AttachPath" Type="nvarchar" MaxLength="50" />
+          <Property Name="AttachImg" Type="image" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="CalSheets">
+          <Key>
+            <PropertyRef Name="CalSheetID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="CalSheetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_EmpID" Type="int" />
+          <Property Name="CalSheetYear" Type="int" />
+          <Property Name="CalSheetMonth" Type="int" />
+          <Property Name="CalSheetWorkTotal" Type="float" />
+          <Property Name="CalSheetLateTotal" Type="float" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Comps">
+          <Key>
+            <PropertyRef Name="CompID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="CompID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="CompName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CompAddr" Type="nvarchar(max)" />
+          <Property Name="CompPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="CompFax" Type="nvarchar" MaxLength="20" />
+          <Property Name="CompTaxNum" Type="nvarchar" MaxLength="20" />
+          <Property Name="CompWeb" Type="nvarchar" MaxLength="20" />
+          <Property Name="CompEmail" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Contracts">
+          <Key>
+            <PropertyRef Name="ContractID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="ContractID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContractCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="ContractName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ContractNum" Type="nvarchar" MaxLength="30" />
+          <Property Name="ContractDate" Type="datetime" />
+          <Property Name="ContractExp" Type="float" />
+          <Property Name="ContractSalary" Type="money" />
+          <Property Name="ContractDesc" Type="nvarchar(max)" />
+          <Property Name="ContractNode" Type="nvarchar(max)" />
+          <Property Name="FK_EmpID" Type="int" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Degrees">
+          <Key>
+            <PropertyRef Name="DegreeID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="DegreeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DegreeCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="DegreeName" Type="nvarchar" MaxLength="100" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="DegreePlace" Type="nvarchar" MaxLength="100" />
+          <Property Name="DegreeDept" Type="nvarchar" MaxLength="100" />
+          <Property Name="DegreeMajor" Type="nvarchar" MaxLength="100" />
+          <Property Name="DegreeDate" Type="date" />
+          <Property Name="DegreeRank" Type="nvarchar" MaxLength="20" />
+          <Property Name="FK_EmpID" Type="int" />
+          <Property Name="AAOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAOrder" Type="int" />
+          <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="100" />
+          <Property Name="FK_CompCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="FK_AreaCode" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Districts">
+          <Key>
+            <PropertyRef Name="DistrictID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAOrder" Type="int" />
+          <Property Name="DistrictID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DistrictCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="DistrictName" Type="nvarchar" MaxLength="100" />
+          <Property Name="FK_ProvinceCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="DistrictCodeSearch" Type="nvarchar" MaxLength="20" />
+          <Property Name="DistrictDesc" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Emps">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpTimekeepCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmpTimekeepName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmpCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmpName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmpGender" Type="int" />
+          <Property Name="EmpAddress1" Type="nvarchar(max)" />
+          <Property Name="EmpAddress2" Type="nvarchar(max)" />
+          <Property Name="EmpAddress3" Type="nvarchar(max)" />
+          <Property Name="EmpPhone1" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmpPhone2" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmpBirth" Type="datetime" />
+          <Property Name="EmpBirthPlace" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmpIDCard" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmpNationality" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpEthnic" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpDegree" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpIDCardPlace" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmpIDCardDate" Type="datetime" />
+          <Property Name="EmpEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpType" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmpStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmpNote" Type="nvarchar" MaxLength="1" />
+          <Property Name="EmpWorkBeginDate" Type="datetime" />
+          <Property Name="EmpWorkEndDate" Type="datetime" />
+          <Property Name="FK_DeptID" Type="int" />
+          <Property Name="FK_CompID" Type="int" />
+          <Property Name="FK_PositionID" Type="int" />
+          <Property Name="FK_PositionName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FK_UserID" Type="int" />
+          <Property Name="EmpAnnualLeave" Type="float" />
+          <Property Name="EmpSalary" Type="money" />
+          <Property Name="EmpSalaryContract" Type="money" />
+          <Property Name="EmpSalaryIns" Type="money" />
+          <Property Name="EmpImg" Type="image" />
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="FK_AreaID" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmpIDCardDateExp" Type="datetime" />
+          <Property Name="EmpPathImg" Type="nvarchar" MaxLength="100" />
+          <Property Name="FK_MarriageID" Type="int" />
+          <Property Name="FK_ReligionID" Type="int" />
+        </EntityType>
+        <EntityType Name="Ethnics">
+          <Key>
+            <PropertyRef Name="EthnicID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAOrder" Type="int" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="EthnicID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EthnicCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="EthnicName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EthnicDesc" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Nations">
+          <Key>
+            <PropertyRef Name="NationID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAOrder" Type="int" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="NationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NationCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="NationName" Type="nvarchar" MaxLength="100" />
+          <Property Name="NationDesc" Type="nvarchar(max)" />
+          <Property Name="NationSearch" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Positions">
+          <Key>
+            <PropertyRef Name="PositionID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAOrder" Type="int" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="PositionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PositionCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="PositionName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Provinces">
+          <Key>
+            <PropertyRef Name="ProvinceID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAOrder" Type="int" />
+          <Property Name="ProvinceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProvinceCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="ProvinceName" Type="nvarchar" MaxLength="100" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="ProvinceCodeSearch" Type="nvarchar" MaxLength="20" />
+          <Property Name="ProvinceDesc" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="100" />
+          <Property Name="RoleDesc" Type="nvarchar" MaxLength="100" />
+          <Property Name="RoleCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="RoleChild" Type="int" />
+          <Property Name="RoleUrl" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleIcon" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleBadgeVariant" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleBadgeText" Type="nvarchar" MaxLength="50" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="RoleSub">
+          <Key>
+            <PropertyRef Name="RoleSubID" />
+          </Key>
+          <Property Name="FK_UserID" Type="int" />
+          <Property Name="FK_RoleID" Type="int" />
+          <Property Name="RoleSubID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleDesc" Type="nvarchar(max)" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Salarys">
+          <Key>
+            <PropertyRef Name="SalaryID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="SalaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_EmpID" Type="int" />
+          <Property Name="FK_EmpName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SalaryBasic" Type="money" />
+          <Property Name="SalaryReward" Type="money" />
+          <Property Name="SalarySupSalary" Type="money" />
+          <Property Name="SalaryTotal" Type="money" />
+          <Property Name="SalaryWorkDay" Type="float" />
+          <Property Name="SalaryActTotal" Type="money" />
+          <Property Name="SalaryContract" Type="money" />
+          <Property Name="SalaryKPCPEmp" Type="money" />
+          <Property Name="SalaryBHXHEmp" Type="money" />
+          <Property Name="SalaryBHYTEmp" Type="money" />
+          <Property Name="SalaryBHTNEmp" Type="money" />
+          <Property Name="SalaryKPCPComp" Type="money" />
+          <Property Name="SalaryBHXHComp" Type="money" />
+          <Property Name="SalaryBHYTComp" Type="money" />
+          <Property Name="SalaryBHTNComp" Type="money" />
+          <Property Name="SalaryAdvance" Type="money" />
+          <Property Name="SalaryFinal" Type="money" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="SetID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="SetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SetSalaryType" Type="nvarchar" MaxLength="20" />
+          <Property Name="SetKPCDComp" Type="float" />
+          <Property Name="SetBHXHComp" Type="float" />
+          <Property Name="SetBHYTComp" Type="float" />
+          <Property Name="SetBHTNComp" Type="float" />
+          <Property Name="SetKPCDEmp" Type="float" />
+          <Property Name="SetBHXHEmp" Type="float" />
+          <Property Name="SetBHYTEmp" Type="float" />
+          <Property Name="SetBHTNEmp" Type="float" />
+          <Property Name="SetTimekeep" Type="float" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="TimeSheets">
+          <Key>
+            <PropertyRef Name="TimeSheetID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="TimeSheetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_EmpID" Type="int" />
+          <Property Name="FK_EmpTimeWrkCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="FK_EmpCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="FK_EmpName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TimeSheetDate" Type="datetime" />
+          <Property Name="TimeSheetDay" Type="int" />
+          <Property Name="TimeSheetShift" Type="nvarchar" MaxLength="20" />
+          <Property Name="TimeSheetCheckIn" Type="datetime" />
+          <Property Name="TimeSheetCheckOut" Type="datetime" />
+          <Property Name="TimeSheetHourTotal" Type="float" />
+          <Property Name="TimeSheetWork" Type="float" />
+          <Property Name="TimeSheetLate" Type="float" />
+          <Property Name="TimeSheetOutSoon" Type="float" />
+          <Property Name="TimeSheetOutLate" Type="float" />
+          <Property Name="TimeSheetSign" Type="nvarchar" MaxLength="20" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserPass" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Wards">
+          <Key>
+            <PropertyRef Name="WardID" />
+          </Key>
+          <Property Name="AACreate" Type="nvarchar" MaxLength="20" />
+          <Property Name="AACreateDate" Type="datetime" />
+          <Property Name="AAStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="AASelection" Type="bit" />
+          <Property Name="AAOrder" Type="int" />
+          <Property Name="WardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WardCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="WardName" Type="nvarchar" MaxLength="100" />
+          <Property Name="FK_DistrictCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="AAGuid" Type="uniqueidentifier" />
+          <Property Name="WardCodeSearch" Type="nvarchar" MaxLength="20" />
+          <Property Name="WardDesc" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="HumanResourceModelStoreContainer">
+          <EntitySet Name="Allowances" EntityType="Self.Allowances" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AllowanceSubs" EntityType="Self.AllowanceSubs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnnualLeaves" EntityType="Self.AnnualLeaves" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Attachs" EntityType="Self.Attachs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CalSheets" EntityType="Self.CalSheets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comps" EntityType="Self.Comps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contracts" EntityType="Self.Contracts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Degrees" EntityType="Self.Degrees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Districts" EntityType="Self.Districts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emps" EntityType="Self.Emps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ethnics" EntityType="Self.Ethnics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nations" EntityType="Self.Nations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provinces" EntityType="Self.Provinces" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoleSub" EntityType="Self.RoleSub" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salarys" EntityType="Self.Salarys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeSheets" EntityType="Self.TimeSheets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wards" EntityType="Self.Wards" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HumanResourceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RoleDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RoleCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RoleChild" Type="Int32" />
+          <Property Name="RoleUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoleIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoleBadgeVariant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoleBadgeText" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="RoleSub">
+          <Key>
+            <PropertyRef Name="RoleSubID" />
+          </Key>
+          <Property Name="FK_UserID" Type="Int32" />
+          <Property Name="FK_RoleID" Type="Int32" />
+          <Property Name="RoleSubID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityContainer Name="HumanResourceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="RoleSubs" EntityType="Self.RoleSub" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Emps" EntityType="HumanResourceModel.Emp" />
+          <EntitySet Name="Allowances" EntityType="HumanResourceModel.Allowance" />
+          <EntitySet Name="AllowanceSubs" EntityType="HumanResourceModel.AllowanceSub" />
+          <EntitySet Name="AnnualLeaves" EntityType="HumanResourceModel.AnnualLeaf" />
+          <EntitySet Name="Areas" EntityType="HumanResourceModel.Area" />
+          <EntitySet Name="Attachs" EntityType="HumanResourceModel.Attach" />
+          <EntitySet Name="CalSheets" EntityType="HumanResourceModel.CalSheet" />
+          <EntitySet Name="Comps" EntityType="HumanResourceModel.Comp" />
+          <EntitySet Name="Contracts" EntityType="HumanResourceModel.Contract" />
+          <EntitySet Name="Degrees" EntityType="HumanResourceModel.Degree" />
+          <EntitySet Name="Departments" EntityType="HumanResourceModel.Department" />
+          <EntitySet Name="Districts" EntityType="HumanResourceModel.District" />
+          <EntitySet Name="Ethnics" EntityType="HumanResourceModel.Ethnic" />
+          <EntitySet Name="Nations" EntityType="HumanResourceModel.Nation" />
+          <EntitySet Name="Positions" EntityType="HumanResourceModel.Position" />
+          <EntitySet Name="Provinces" EntityType="HumanResourceModel.Province" />
+          <EntitySet Name="Salarys" EntityType="HumanResourceModel.Salary" />
+          <EntitySet Name="Settings" EntityType="HumanResourceModel.Setting" />
+          <EntitySet Name="TimeSheets" EntityType="HumanResourceModel.TimeSheet" />
+          <EntitySet Name="Wards" EntityType="HumanResourceModel.Ward" />
+        </EntityContainer>
+        <EntityType Name="Emp">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpTimekeepCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmpTimekeepName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmpCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmpName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmpGender" Type="Int32" />
+          <Property Name="EmpAddress1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmpAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmpAddress3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmpPhone1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmpPhone2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmpBirth" Type="DateTime" Precision="3" />
+          <Property Name="EmpBirthPlace" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmpIDCard" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmpNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpEthnic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpDegree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpIDCardPlace" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmpIDCardDate" Type="DateTime" Precision="3" />
+          <Property Name="EmpEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmpStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmpNote" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="EmpWorkBeginDate" Type="DateTime" Precision="3" />
+          <Property Name="EmpWorkEndDate" Type="DateTime" Precision="3" />
+          <Property Name="FK_DeptCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FK_CompCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FK_PositionCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FK_PositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FK_UserID" Type="Int32" />
+          <Property Name="EmpAnnualLeave" Type="Double" />
+          <Property Name="EmpSalary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EmpSalaryContract" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EmpSalaryIns" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EmpImg" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="FK_AreaCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmpIDCardDateExp" Type="DateTime" Precision="3" />
+          <Property Name="EmpPathImg" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FK_DeptID" Type="Int32" />
+          <Property Name="FK_CompID" Type="Int32" />
+          <Property Name="FK_PositionID" Type="Int32" />
+          <Property Name="FK_AreaID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FK_MarriageID" Type="Int32" />
+          <Property Name="FK_ReligionID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Allowance">
+          <Key>
+            <PropertyRef Name="AllowanceID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAOrder" Type="Int32" />
+          <Property Name="AllowanceCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AllowanceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AllowanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="AllowanceSub">
+          <Key>
+            <PropertyRef Name="AllowanceSubID" />
+          </Key>
+          <Property Name="FK_AllowanceID" Type="Int32" />
+          <Property Name="FK_EmpID" Type="Int32" />
+          <Property Name="AllowanceSubID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AllowanceSubSalary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="AnnualLeaf">
+          <Key>
+            <PropertyRef Name="AnnualLeaveID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AnnualLeaveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_EmpAnnualLeave" Type="Double" />
+          <Property Name="FK_EmpID" Type="Int32" />
+          <Property Name="AnnualLeaveTotal" Type="Double" />
+          <Property Name="AnnualLeaveUsed" Type="Double" />
+          <Property Name="AnnualLeaveRemain" Type="Double" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="AreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AreaName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AreaAddr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FK_CompCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Attach">
+          <Key>
+            <PropertyRef Name="AttachID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AttachID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AttachName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AttachPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AttachImg" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="CalSheet">
+          <Key>
+            <PropertyRef Name="CalSheetID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="CalSheetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_EmpID" Type="Int32" />
+          <Property Name="CalSheetYear" Type="Int32" />
+          <Property Name="CalSheetMonth" Type="Int32" />
+          <Property Name="CalSheetWorkTotal" Type="Double" />
+          <Property Name="CalSheetLateTotal" Type="Double" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Comp">
+          <Key>
+            <PropertyRef Name="CompID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="CompID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CompName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CompAddr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CompFax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CompTaxNum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CompWeb" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CompEmail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="ContractID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="ContractID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ContractName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ContractNum" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ContractDate" Type="DateTime" Precision="3" />
+          <Property Name="ContractExp" Type="Double" />
+          <Property Name="ContractSalary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ContractDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContractNode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FK_EmpID" Type="Int32" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Degree">
+          <Key>
+            <PropertyRef Name="DegreeID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="DegreeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DegreeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DegreeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="DegreePlace" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DegreeDept" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DegreeMajor" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DegreeDate" Type="DateTime" Precision="0" />
+          <Property Name="DegreeRank" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FK_EmpID" Type="Int32" />
+          <Property Name="AAOrder" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAOrder" Type="Int32" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FK_CompCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="FK_AreaCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="DistrictID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAOrder" Type="Int32" />
+          <Property Name="DistrictID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DistrictCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DistrictName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FK_ProvinceCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="DistrictCodeSearch" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DistrictDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ethnic">
+          <Key>
+            <PropertyRef Name="EthnicID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAOrder" Type="Int32" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="EthnicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EthnicCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EthnicName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EthnicDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Nation">
+          <Key>
+            <PropertyRef Name="NationID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAOrder" Type="Int32" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="NationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NationCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NationName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NationDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NationSearch" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="PositionID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAOrder" Type="Int32" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="PositionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PositionCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PositionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Province">
+          <Key>
+            <PropertyRef Name="ProvinceID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAOrder" Type="Int32" />
+          <Property Name="ProvinceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProvinceCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="ProvinceCodeSearch" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinceDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="SalaryID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="SalaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_EmpID" Type="Int32" />
+          <Property Name="FK_EmpName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SalaryBasic" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryReward" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalarySupSalary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryTotal" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryWorkDay" Type="Double" />
+          <Property Name="SalaryActTotal" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryContract" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryKPCPEmp" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryBHXHEmp" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryBHYTEmp" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryBHTNEmp" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryKPCPComp" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryBHXHComp" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryBHYTComp" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryBHTNComp" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryAdvance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalaryFinal" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="SetID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="SetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SetSalaryType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SetKPCDComp" Type="Double" />
+          <Property Name="SetBHXHComp" Type="Double" />
+          <Property Name="SetBHYTComp" Type="Double" />
+          <Property Name="SetBHTNComp" Type="Double" />
+          <Property Name="SetKPCDEmp" Type="Double" />
+          <Property Name="SetBHXHEmp" Type="Double" />
+          <Property Name="SetBHYTEmp" Type="Double" />
+          <Property Name="SetBHTNEmp" Type="Double" />
+          <Property Name="SetTimekeep" Type="Double" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="TimeSheet">
+          <Key>
+            <PropertyRef Name="TimeSheetID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="TimeSheetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_EmpID" Type="Int32" />
+          <Property Name="FK_EmpTimeWrkCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FK_EmpCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FK_EmpName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TimeSheetDate" Type="DateTime" Precision="3" />
+          <Property Name="TimeSheetDay" Type="Int32" />
+          <Property Name="TimeSheetShift" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TimeSheetCheckIn" Type="DateTime" Precision="3" />
+          <Property Name="TimeSheetCheckOut" Type="DateTime" Precision="3" />
+          <Property Name="TimeSheetHourTotal" Type="Double" />
+          <Property Name="TimeSheetWork" Type="Double" />
+          <Property Name="TimeSheetLate" Type="Double" />
+          <Property Name="TimeSheetOutSoon" Type="Double" />
+          <Property Name="TimeSheetOutLate" Type="Double" />
+          <Property Name="TimeSheetSign" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AAGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Ward">
+          <Key>
+            <PropertyRef Name="WardID" />
+          </Key>
+          <Property Name="AACreate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AACreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AAStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AASelection" Type="Boolean" />
+          <Property Name="AAOrder" Type="Int32" />
+          <Property Name="WardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WardCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WardName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FK_DistrictCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AAGuid" Type="Guid" />
+          <Property Name="WardCodeSearch" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WardDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HumanResourceModelStoreContainer" CdmEntityContainer="HumanResourceEntities">
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="HumanResourceModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleDesc" ColumnName="RoleDesc" />
+                <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
+                <ScalarProperty Name="RoleChild" ColumnName="RoleChild" />
+                <ScalarProperty Name="RoleUrl" ColumnName="RoleUrl" />
+                <ScalarProperty Name="RoleIcon" ColumnName="RoleIcon" />
+                <ScalarProperty Name="RoleBadgeVariant" ColumnName="RoleBadgeVariant" />
+                <ScalarProperty Name="RoleBadgeText" ColumnName="RoleBadgeText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleSubs">
+            <EntityTypeMapping TypeName="HumanResourceModel.RoleSub">
+              <MappingFragment StoreEntitySet="RoleSub">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="FK_UserID" ColumnName="FK_UserID" />
+                <ScalarProperty Name="FK_RoleID" ColumnName="FK_RoleID" />
+                <ScalarProperty Name="RoleSubID" ColumnName="RoleSubID" />
+                <ScalarProperty Name="RoleDesc" ColumnName="RoleDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="HumanResourceModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+                <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emps">
+            <EntityTypeMapping TypeName="HumanResourceModel.Emp">
+              <MappingFragment StoreEntitySet="Emps">
+                <ScalarProperty Name="FK_ReligionID" ColumnName="FK_ReligionID" />
+                <ScalarProperty Name="FK_MarriageID" ColumnName="FK_MarriageID" />
+                <ScalarProperty Name="FK_AreaID" ColumnName="FK_AreaID" />
+                <ScalarProperty Name="FK_PositionID" ColumnName="FK_PositionID" />
+                <ScalarProperty Name="FK_CompID" ColumnName="FK_CompID" />
+                <ScalarProperty Name="FK_DeptID" ColumnName="FK_DeptID" />
+                <ScalarProperty Name="EmpPathImg" ColumnName="EmpPathImg" />
+                <ScalarProperty Name="EmpIDCardDateExp" ColumnName="EmpIDCardDateExp" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+                <ScalarProperty Name="EmpImg" ColumnName="EmpImg" />
+                <ScalarProperty Name="EmpSalaryIns" ColumnName="EmpSalaryIns" />
+                <ScalarProperty Name="EmpSalaryContract" ColumnName="EmpSalaryContract" />
+                <ScalarProperty Name="EmpSalary" ColumnName="EmpSalary" />
+                <ScalarProperty Name="EmpAnnualLeave" ColumnName="EmpAnnualLeave" />
+                <ScalarProperty Name="FK_UserID" ColumnName="FK_UserID" />
+                <ScalarProperty Name="FK_PositionName" ColumnName="FK_PositionName" />
+                <ScalarProperty Name="EmpWorkEndDate" ColumnName="EmpWorkEndDate" />
+                <ScalarProperty Name="EmpWorkBeginDate" ColumnName="EmpWorkBeginDate" />
+                <ScalarProperty Name="EmpNote" ColumnName="EmpNote" />
+                <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
+                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+                <ScalarProperty Name="EmpEmail" ColumnName="EmpEmail" />
+                <ScalarProperty Name="EmpIDCardDate" ColumnName="EmpIDCardDate" />
+                <ScalarProperty Name="EmpIDCardPlace" ColumnName="EmpIDCardPlace" />
+                <ScalarProperty Name="EmpDegree" ColumnName="EmpDegree" />
+                <ScalarProperty Name="EmpEthnic" ColumnName="EmpEthnic" />
+                <ScalarProperty Name="EmpNationality" ColumnName="EmpNationality" />
+                <ScalarProperty Name="EmpIDCard" ColumnName="EmpIDCard" />
+                <ScalarProperty Name="EmpBirthPlace" ColumnName="EmpBirthPlace" />
+                <ScalarProperty Name="EmpBirth" ColumnName="EmpBirth" />
+                <ScalarProperty Name="EmpPhone2" ColumnName="EmpPhone2" />
+                <ScalarProperty Name="EmpPhone1" ColumnName="EmpPhone1" />
+                <ScalarProperty Name="EmpAddress3" ColumnName="EmpAddress3" />
+                <ScalarProperty Name="EmpAddress2" ColumnName="EmpAddress2" />
+                <ScalarProperty Name="EmpAddress1" ColumnName="EmpAddress1" />
+                <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+                <ScalarProperty Name="EmpTimekeepName" ColumnName="EmpTimekeepName" />
+                <ScalarProperty Name="EmpTimekeepCode" ColumnName="EmpTimekeepCode" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Allowances">
+            <EntityTypeMapping TypeName="HumanResourceModel.Allowance">
+              <MappingFragment StoreEntitySet="Allowances">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AllowanceID" ColumnName="AllowanceID" />
+                <ScalarProperty Name="AllowanceName" ColumnName="AllowanceName" />
+                <ScalarProperty Name="AllowanceCode" ColumnName="AllowanceCode" />
+                <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllowanceSubs">
+            <EntityTypeMapping TypeName="HumanResourceModel.AllowanceSub">
+              <MappingFragment StoreEntitySet="AllowanceSubs">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AllowanceSubSalary" ColumnName="AllowanceSubSalary" />
+                <ScalarProperty Name="AllowanceSubID" ColumnName="AllowanceSubID" />
+                <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+                <ScalarProperty Name="FK_AllowanceID" ColumnName="FK_AllowanceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnnualLeaves">
+            <EntityTypeMapping TypeName="HumanResourceModel.AnnualLeaf">
+              <MappingFragment StoreEntitySet="AnnualLeaves">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AnnualLeaveRemain" ColumnName="AnnualLeaveRemain" />
+                <ScalarProperty Name="AnnualLeaveUsed" ColumnName="AnnualLeaveUsed" />
+                <ScalarProperty Name="AnnualLeaveTotal" ColumnName="AnnualLeaveTotal" />
+                <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+                <ScalarProperty Name="FK_EmpAnnualLeave" ColumnName="FK_EmpAnnualLeave" />
+                <ScalarProperty Name="AnnualLeaveID" ColumnName="AnnualLeaveID" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="HumanResourceModel.Area">
+              <MappingFragment StoreEntitySet="Areas">
+                <ScalarProperty Name="FK_CompCode" ColumnName="FK_CompCode" />
+                <ScalarProperty Name="AreaAddr" ColumnName="AreaAddr" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attachs">
+            <EntityTypeMapping TypeName="HumanResourceModel.Attach">
+              <MappingFragment StoreEntitySet="Attachs">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AttachImg" ColumnName="AttachImg" />
+                <ScalarProperty Name="AttachPath" ColumnName="AttachPath" />
+                <ScalarProperty Name="AttachName" ColumnName="AttachName" />
+                <ScalarProperty Name="AttachID" ColumnName="AttachID" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CalSheets">
+            <EntityTypeMapping TypeName="HumanResourceModel.CalSheet">
+              <MappingFragment StoreEntitySet="CalSheets">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="CalSheetLateTotal" ColumnName="CalSheetLateTotal" />
+                <ScalarProperty Name="CalSheetWorkTotal" ColumnName="CalSheetWorkTotal" />
+                <ScalarProperty Name="CalSheetMonth" ColumnName="CalSheetMonth" />
+                <ScalarProperty Name="CalSheetYear" ColumnName="CalSheetYear" />
+                <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+                <ScalarProperty Name="CalSheetID" ColumnName="CalSheetID" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comps">
+            <EntityTypeMapping TypeName="HumanResourceModel.Comp">
+              <MappingFragment StoreEntitySet="Comps">
+                <ScalarProperty Name="CompEmail" ColumnName="CompEmail" />
+                <ScalarProperty Name="CompWeb" ColumnName="CompWeb" />
+                <ScalarProperty Name="CompTaxNum" ColumnName="CompTaxNum" />
+                <ScalarProperty Name="CompFax" ColumnName="CompFax" />
+                <ScalarProperty Name="CompPhone" ColumnName="CompPhone" />
+                <ScalarProperty Name="CompAddr" ColumnName="CompAddr" />
+                <ScalarProperty Name="CompName" ColumnName="CompName" />
+                <ScalarProperty Name="CompCode" ColumnName="CompCode" />
+                <ScalarProperty Name="CompID" ColumnName="CompID" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contracts">
+            <EntityTypeMapping TypeName="HumanResourceModel.Contract">
+              <MappingFragment StoreEntitySet="Contracts">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+                <ScalarProperty Name="ContractNode" ColumnName="ContractNode" />
+                <ScalarProperty Name="ContractDesc" ColumnName="ContractDesc" />
+                <ScalarProperty Name="ContractSalary" ColumnName="ContractSalary" />
+                <ScalarProperty Name="ContractExp" ColumnName="ContractExp" />
+                <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+                <ScalarProperty Name="ContractNum" ColumnName="ContractNum" />
+                <ScalarProperty Name="ContractName" ColumnName="ContractName" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Degrees">
+            <EntityTypeMapping TypeName="HumanResourceModel.Degree">
+              <MappingFragment StoreEntitySet="Degrees">
+                <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+                <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+                <ScalarProperty Name="DegreeRank" ColumnName="DegreeRank" />
+                <ScalarProperty Name="DegreeDate" ColumnName="DegreeDate" />
+                <ScalarProperty Name="DegreeMajor" ColumnName="DegreeMajor" />
+                <ScalarProperty Name="DegreeDept" ColumnName="DegreeDept" />
+                <ScalarProperty Name="DegreePlace" ColumnName="DegreePlace" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+                <ScalarProperty Name="DegreeCode" ColumnName="DegreeCode" />
+                <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="HumanResourceModel.Department">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="FK_AreaCode" ColumnName="FK_AreaCode" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="FK_CompCode" ColumnName="FK_CompCode" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Districts">
+            <EntityTypeMapping TypeName="HumanResourceModel.District">
+              <MappingFragment StoreEntitySet="Districts">
+                <ScalarProperty Name="DistrictDesc" ColumnName="DistrictDesc" />
+                <ScalarProperty Name="DistrictCodeSearch" ColumnName="DistrictCodeSearch" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="FK_ProvinceCode" ColumnName="FK_ProvinceCode" />
+                <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+                <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+                <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ethnics">
+            <EntityTypeMapping TypeName="HumanResourceModel.Ethnic">
+              <MappingFragment StoreEntitySet="Ethnics">
+                <ScalarProperty Name="EthnicDesc" ColumnName="EthnicDesc" />
+                <ScalarProperty Name="EthnicName" ColumnName="EthnicName" />
+                <ScalarProperty Name="EthnicCode" ColumnName="EthnicCode" />
+                <ScalarProperty Name="EthnicID" ColumnName="EthnicID" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nations">
+            <EntityTypeMapping TypeName="HumanResourceModel.Nation">
+              <MappingFragment StoreEntitySet="Nations">
+                <ScalarProperty Name="NationSearch" ColumnName="NationSearch" />
+                <ScalarProperty Name="NationDesc" ColumnName="NationDesc" />
+                <ScalarProperty Name="NationName" ColumnName="NationName" />
+                <ScalarProperty Name="NationCode" ColumnName="NationCode" />
+                <ScalarProperty Name="NationID" ColumnName="NationID" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="HumanResourceModel.Position">
+              <MappingFragment StoreEntitySet="Positions">
+                <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+                <ScalarProperty Name="PositionCode" ColumnName="PositionCode" />
+                <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provinces">
+            <EntityTypeMapping TypeName="HumanResourceModel.Province">
+              <MappingFragment StoreEntitySet="Provinces">
+                <ScalarProperty Name="ProvinceDesc" ColumnName="ProvinceDesc" />
+                <ScalarProperty Name="ProvinceCodeSearch" ColumnName="ProvinceCodeSearch" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+                <ScalarProperty Name="ProvinceCode" ColumnName="ProvinceCode" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+                <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salarys">
+            <EntityTypeMapping TypeName="HumanResourceModel.Salary">
+              <MappingFragment StoreEntitySet="Salarys">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="SalaryFinal" ColumnName="SalaryFinal" />
+                <ScalarProperty Name="SalaryAdvance" ColumnName="SalaryAdvance" />
+                <ScalarProperty Name="SalaryBHTNComp" ColumnName="SalaryBHTNComp" />
+                <ScalarProperty Name="SalaryBHYTComp" ColumnName="SalaryBHYTComp" />
+                <ScalarProperty Name="SalaryBHXHComp" ColumnName="SalaryBHXHComp" />
+                <ScalarProperty Name="SalaryKPCPComp" ColumnName="SalaryKPCPComp" />
+                <ScalarProperty Name="SalaryBHTNEmp" ColumnName="SalaryBHTNEmp" />
+                <ScalarProperty Name="SalaryBHYTEmp" ColumnName="SalaryBHYTEmp" />
+                <ScalarProperty Name="SalaryBHXHEmp" ColumnName="SalaryBHXHEmp" />
+                <ScalarProperty Name="SalaryKPCPEmp" ColumnName="SalaryKPCPEmp" />
+                <ScalarProperty Name="SalaryContract" ColumnName="SalaryContract" />
+                <ScalarProperty Name="SalaryActTotal" ColumnName="SalaryActTotal" />
+                <ScalarProperty Name="SalaryWorkDay" ColumnName="SalaryWorkDay" />
+                <ScalarProperty Name="SalaryTotal" ColumnName="SalaryTotal" />
+                <ScalarProperty Name="SalarySupSalary" ColumnName="SalarySupSalary" />
+                <ScalarProperty Name="SalaryReward" ColumnName="SalaryReward" />
+                <ScalarProperty Name="SalaryBasic" ColumnName="SalaryBasic" />
+                <ScalarProperty Name="FK_EmpName" ColumnName="FK_EmpName" />
+                <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Settings">
+            <EntityTypeMapping TypeName="HumanResourceModel.Setting">
+              <MappingFragment StoreEntitySet="Settings">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="SetTimekeep" ColumnName="SetTimekeep" />
+                <ScalarProperty Name="SetBHTNEmp" ColumnName="SetBHTNEmp" />
+                <ScalarProperty Name="SetBHYTEmp" ColumnName="SetBHYTEmp" />
+                <ScalarProperty Name="SetBHXHEmp" ColumnName="SetBHXHEmp" />
+                <ScalarProperty Name="SetKPCDEmp" ColumnName="SetKPCDEmp" />
+                <ScalarProperty Name="SetBHTNComp" ColumnName="SetBHTNComp" />
+                <ScalarProperty Name="SetBHYTComp" ColumnName="SetBHYTComp" />
+                <ScalarProperty Name="SetBHXHComp" ColumnName="SetBHXHComp" />
+                <ScalarProperty Name="SetKPCDComp" ColumnName="SetKPCDComp" />
+                <ScalarProperty Name="SetSalaryType" ColumnName="SetSalaryType" />
+                <ScalarProperty Name="SetID" ColumnName="SetID" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeSheets">
+            <EntityTypeMapping TypeName="HumanResourceModel.TimeSheet">
+              <MappingFragment StoreEntitySet="TimeSheets">
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="TimeSheetSign" ColumnName="TimeSheetSign" />
+                <ScalarProperty Name="TimeSheetOutLate" ColumnName="TimeSheetOutLate" />
+                <ScalarProperty Name="TimeSheetOutSoon" ColumnName="TimeSheetOutSoon" />
+                <ScalarProperty Name="TimeSheetLate" ColumnName="TimeSheetLate" />
+                <ScalarProperty Name="TimeSheetWork" ColumnName="TimeSheetWork" />
+                <ScalarProperty Name="TimeSheetHourTotal" ColumnName="TimeSheetHourTotal" />
+                <ScalarProperty Name="TimeSheetCheckOut" ColumnName="TimeSheetCheckOut" />
+                <ScalarProperty Name="TimeSheetCheckIn" ColumnName="TimeSheetCheckIn" />
+                <ScalarProperty Name="TimeSheetShift" ColumnName="TimeSheetShift" />
+                <ScalarProperty Name="TimeSheetDay" ColumnName="TimeSheetDay" />
+                <ScalarProperty Name="TimeSheetDate" ColumnName="TimeSheetDate" />
+                <ScalarProperty Name="FK_EmpName" ColumnName="FK_EmpName" />
+                <ScalarProperty Name="FK_EmpCode" ColumnName="FK_EmpCode" />
+                <ScalarProperty Name="FK_EmpTimeWrkCode" ColumnName="FK_EmpTimeWrkCode" />
+                <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+                <ScalarProperty Name="TimeSheetID" ColumnName="TimeSheetID" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wards">
+            <EntityTypeMapping TypeName="HumanResourceModel.Ward">
+              <MappingFragment StoreEntitySet="Wards">
+                <ScalarProperty Name="WardDesc" ColumnName="WardDesc" />
+                <ScalarProperty Name="WardCodeSearch" ColumnName="WardCodeSearch" />
+                <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+                <ScalarProperty Name="FK_DistrictCode" ColumnName="FK_DistrictCode" />
+                <ScalarProperty Name="WardName" ColumnName="WardName" />
+                <ScalarProperty Name="WardCode" ColumnName="WardCode" />
+                <ScalarProperty Name="WardID" ColumnName="WardID" />
+                <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+                <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+                <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+                <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

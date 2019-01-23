@@ -1,0 +1,74 @@
+﻿@model QLNV_SER.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AACreate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AACreate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AACreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AACreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AAStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AAStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AASelection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AASelection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserPass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserPass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

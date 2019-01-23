@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HumanResourceModelStoreContainer" CdmEntityContainer="HumanResourceEntities">
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="HumanResourceModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleDesc" ColumnName="RoleDesc" />
+          <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
+          <ScalarProperty Name="RoleChild" ColumnName="RoleChild" />
+          <ScalarProperty Name="RoleUrl" ColumnName="RoleUrl" />
+          <ScalarProperty Name="RoleIcon" ColumnName="RoleIcon" />
+          <ScalarProperty Name="RoleBadgeVariant" ColumnName="RoleBadgeVariant" />
+          <ScalarProperty Name="RoleBadgeText" ColumnName="RoleBadgeText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleSubs">
+      <EntityTypeMapping TypeName="HumanResourceModel.RoleSub">
+        <MappingFragment StoreEntitySet="RoleSub">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="FK_UserID" ColumnName="FK_UserID" />
+          <ScalarProperty Name="FK_RoleID" ColumnName="FK_RoleID" />
+          <ScalarProperty Name="RoleSubID" ColumnName="RoleSubID" />
+          <ScalarProperty Name="RoleDesc" ColumnName="RoleDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HumanResourceModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emps">
+      <EntityTypeMapping TypeName="HumanResourceModel.Emp">
+        <MappingFragment StoreEntitySet="Emps">
+          <ScalarProperty Name="FK_ReligionID" ColumnName="FK_ReligionID" />
+          <ScalarProperty Name="FK_MarriageID" ColumnName="FK_MarriageID" />
+          <ScalarProperty Name="FK_AreaID" ColumnName="FK_AreaID" />
+          <ScalarProperty Name="FK_PositionID" ColumnName="FK_PositionID" />
+          <ScalarProperty Name="FK_CompID" ColumnName="FK_CompID" />
+          <ScalarProperty Name="FK_DeptID" ColumnName="FK_DeptID" />
+          <ScalarProperty Name="EmpPathImg" ColumnName="EmpPathImg" />
+          <ScalarProperty Name="EmpIDCardDateExp" ColumnName="EmpIDCardDateExp" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+          <ScalarProperty Name="EmpImg" ColumnName="EmpImg" />
+          <ScalarProperty Name="EmpSalaryIns" ColumnName="EmpSalaryIns" />
+          <ScalarProperty Name="EmpSalaryContract" ColumnName="EmpSalaryContract" />
+          <ScalarProperty Name="EmpSalary" ColumnName="EmpSalary" />
+          <ScalarProperty Name="EmpAnnualLeave" ColumnName="EmpAnnualLeave" />
+          <ScalarProperty Name="FK_UserID" ColumnName="FK_UserID" />
+          <ScalarProperty Name="FK_PositionName" ColumnName="FK_PositionName" />
+          <ScalarProperty Name="EmpWorkEndDate" ColumnName="EmpWorkEndDate" />
+          <ScalarProperty Name="EmpWorkBeginDate" ColumnName="EmpWorkBeginDate" />
+          <ScalarProperty Name="EmpNote" ColumnName="EmpNote" />
+          <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
+          <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+          <ScalarProperty Name="EmpEmail" ColumnName="EmpEmail" />
+          <ScalarProperty Name="EmpIDCardDate" ColumnName="EmpIDCardDate" />
+          <ScalarProperty Name="EmpIDCardPlace" ColumnName="EmpIDCardPlace" />
+          <ScalarProperty Name="EmpDegree" ColumnName="EmpDegree" />
+          <ScalarProperty Name="EmpEthnic" ColumnName="EmpEthnic" />
+          <ScalarProperty Name="EmpNationality" ColumnName="EmpNationality" />
+          <ScalarProperty Name="EmpIDCard" ColumnName="EmpIDCard" />
+          <ScalarProperty Name="EmpBirthPlace" ColumnName="EmpBirthPlace" />
+          <ScalarProperty Name="EmpBirth" ColumnName="EmpBirth" />
+          <ScalarProperty Name="EmpPhone2" ColumnName="EmpPhone2" />
+          <ScalarProperty Name="EmpPhone1" ColumnName="EmpPhone1" />
+          <ScalarProperty Name="EmpAddress3" ColumnName="EmpAddress3" />
+          <ScalarProperty Name="EmpAddress2" ColumnName="EmpAddress2" />
+          <ScalarProperty Name="EmpAddress1" ColumnName="EmpAddress1" />
+          <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="EmpTimekeepName" ColumnName="EmpTimekeepName" />
+          <ScalarProperty Name="EmpTimekeepCode" ColumnName="EmpTimekeepCode" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Allowances">
+      <EntityTypeMapping TypeName="HumanResourceModel.Allowance">
+        <MappingFragment StoreEntitySet="Allowances">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AllowanceID" ColumnName="AllowanceID" />
+          <ScalarProperty Name="AllowanceName" ColumnName="AllowanceName" />
+          <ScalarProperty Name="AllowanceCode" ColumnName="AllowanceCode" />
+          <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowanceSubs">
+      <EntityTypeMapping TypeName="HumanResourceModel.AllowanceSub">
+        <MappingFragment StoreEntitySet="AllowanceSubs">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AllowanceSubSalary" ColumnName="AllowanceSubSalary" />
+          <ScalarProperty Name="AllowanceSubID" ColumnName="AllowanceSubID" />
+          <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+          <ScalarProperty Name="FK_AllowanceID" ColumnName="FK_AllowanceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnnualLeaves">
+      <EntityTypeMapping TypeName="HumanResourceModel.AnnualLeaf">
+        <MappingFragment StoreEntitySet="AnnualLeaves">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AnnualLeaveRemain" ColumnName="AnnualLeaveRemain" />
+          <ScalarProperty Name="AnnualLeaveUsed" ColumnName="AnnualLeaveUsed" />
+          <ScalarProperty Name="AnnualLeaveTotal" ColumnName="AnnualLeaveTotal" />
+          <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+          <ScalarProperty Name="FK_EmpAnnualLeave" ColumnName="FK_EmpAnnualLeave" />
+          <ScalarProperty Name="AnnualLeaveID" ColumnName="AnnualLeaveID" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="HumanResourceModel.Area">
+        <MappingFragment StoreEntitySet="Areas">
+          <ScalarProperty Name="FK_CompCode" ColumnName="FK_CompCode" />
+          <ScalarProperty Name="AreaAddr" ColumnName="AreaAddr" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attachs">
+      <EntityTypeMapping TypeName="HumanResourceModel.Attach">
+        <MappingFragment StoreEntitySet="Attachs">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AttachImg" ColumnName="AttachImg" />
+          <ScalarProperty Name="AttachPath" ColumnName="AttachPath" />
+          <ScalarProperty Name="AttachName" ColumnName="AttachName" />
+          <ScalarProperty Name="AttachID" ColumnName="AttachID" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalSheets">
+      <EntityTypeMapping TypeName="HumanResourceModel.CalSheet">
+        <MappingFragment StoreEntitySet="CalSheets">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="CalSheetLateTotal" ColumnName="CalSheetLateTotal" />
+          <ScalarProperty Name="CalSheetWorkTotal" ColumnName="CalSheetWorkTotal" />
+          <ScalarProperty Name="CalSheetMonth" ColumnName="CalSheetMonth" />
+          <ScalarProperty Name="CalSheetYear" ColumnName="CalSheetYear" />
+          <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+          <ScalarProperty Name="CalSheetID" ColumnName="CalSheetID" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comps">
+      <EntityTypeMapping TypeName="HumanResourceModel.Comp">
+        <MappingFragment StoreEntitySet="Comps">
+          <ScalarProperty Name="CompEmail" ColumnName="CompEmail" />
+          <ScalarProperty Name="CompWeb" ColumnName="CompWeb" />
+          <ScalarProperty Name="CompTaxNum" ColumnName="CompTaxNum" />
+          <ScalarProperty Name="CompFax" ColumnName="CompFax" />
+          <ScalarProperty Name="CompPhone" ColumnName="CompPhone" />
+          <ScalarProperty Name="CompAddr" ColumnName="CompAddr" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="CompCode" ColumnName="CompCode" />
+          <ScalarProperty Name="CompID" ColumnName="CompID" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contracts">
+      <EntityTypeMapping TypeName="HumanResourceModel.Contract">
+        <MappingFragment StoreEntitySet="Contracts">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+          <ScalarProperty Name="ContractNode" ColumnName="ContractNode" />
+          <ScalarProperty Name="ContractDesc" ColumnName="ContractDesc" />
+          <ScalarProperty Name="ContractSalary" ColumnName="ContractSalary" />
+          <ScalarProperty Name="ContractExp" ColumnName="ContractExp" />
+          <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+          <ScalarProperty Name="ContractNum" ColumnName="ContractNum" />
+          <ScalarProperty Name="ContractName" ColumnName="ContractName" />
+          <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Degrees">
+      <EntityTypeMapping TypeName="HumanResourceModel.Degree">
+        <MappingFragment StoreEntitySet="Degrees">
+          <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+          <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+          <ScalarProperty Name="DegreeRank" ColumnName="DegreeRank" />
+          <ScalarProperty Name="DegreeDate" ColumnName="DegreeDate" />
+          <ScalarProperty Name="DegreeMajor" ColumnName="DegreeMajor" />
+          <ScalarProperty Name="DegreeDept" ColumnName="DegreeDept" />
+          <ScalarProperty Name="DegreePlace" ColumnName="DegreePlace" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="DegreeCode" ColumnName="DegreeCode" />
+          <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="HumanResourceModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="FK_AreaCode" ColumnName="FK_AreaCode" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="FK_CompCode" ColumnName="FK_CompCode" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Districts">
+      <EntityTypeMapping TypeName="HumanResourceModel.District">
+        <MappingFragment StoreEntitySet="Districts">
+          <ScalarProperty Name="DistrictDesc" ColumnName="DistrictDesc" />
+          <ScalarProperty Name="DistrictCodeSearch" ColumnName="DistrictCodeSearch" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="FK_ProvinceCode" ColumnName="FK_ProvinceCode" />
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+          <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ethnics">
+      <EntityTypeMapping TypeName="HumanResourceModel.Ethnic">
+        <MappingFragment StoreEntitySet="Ethnics">
+          <ScalarProperty Name="EthnicDesc" ColumnName="EthnicDesc" />
+          <ScalarProperty Name="EthnicName" ColumnName="EthnicName" />
+          <ScalarProperty Name="EthnicCode" ColumnName="EthnicCode" />
+          <ScalarProperty Name="EthnicID" ColumnName="EthnicID" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nations">
+      <EntityTypeMapping TypeName="HumanResourceModel.Nation">
+        <MappingFragment StoreEntitySet="Nations">
+          <ScalarProperty Name="NationSearch" ColumnName="NationSearch" />
+          <ScalarProperty Name="NationDesc" ColumnName="NationDesc" />
+          <ScalarProperty Name="NationName" ColumnName="NationName" />
+          <ScalarProperty Name="NationCode" ColumnName="NationCode" />
+          <ScalarProperty Name="NationID" ColumnName="NationID" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="HumanResourceModel.Position">
+        <MappingFragment StoreEntitySet="Positions">
+          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+          <ScalarProperty Name="PositionCode" ColumnName="PositionCode" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="HumanResourceModel.Province">
+        <MappingFragment StoreEntitySet="Provinces">
+          <ScalarProperty Name="ProvinceDesc" ColumnName="ProvinceDesc" />
+          <ScalarProperty Name="ProvinceCodeSearch" ColumnName="ProvinceCodeSearch" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="ProvinceCode" ColumnName="ProvinceCode" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salarys">
+      <EntityTypeMapping TypeName="HumanResourceModel.Salary">
+        <MappingFragment StoreEntitySet="Salarys">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="SalaryFinal" ColumnName="SalaryFinal" />
+          <ScalarProperty Name="SalaryAdvance" ColumnName="SalaryAdvance" />
+          <ScalarProperty Name="SalaryBHTNComp" ColumnName="SalaryBHTNComp" />
+          <ScalarProperty Name="SalaryBHYTComp" ColumnName="SalaryBHYTComp" />
+          <ScalarProperty Name="SalaryBHXHComp" ColumnName="SalaryBHXHComp" />
+          <ScalarProperty Name="SalaryKPCPComp" ColumnName="SalaryKPCPComp" />
+          <ScalarProperty Name="SalaryBHTNEmp" ColumnName="SalaryBHTNEmp" />
+          <ScalarProperty Name="SalaryBHYTEmp" ColumnName="SalaryBHYTEmp" />
+          <ScalarProperty Name="SalaryBHXHEmp" ColumnName="SalaryBHXHEmp" />
+          <ScalarProperty Name="SalaryKPCPEmp" ColumnName="SalaryKPCPEmp" />
+          <ScalarProperty Name="SalaryContract" ColumnName="SalaryContract" />
+          <ScalarProperty Name="SalaryActTotal" ColumnName="SalaryActTotal" />
+          <ScalarProperty Name="SalaryWorkDay" ColumnName="SalaryWorkDay" />
+          <ScalarProperty Name="SalaryTotal" ColumnName="SalaryTotal" />
+          <ScalarProperty Name="SalarySupSalary" ColumnName="SalarySupSalary" />
+          <ScalarProperty Name="SalaryReward" ColumnName="SalaryReward" />
+          <ScalarProperty Name="SalaryBasic" ColumnName="SalaryBasic" />
+          <ScalarProperty Name="FK_EmpName" ColumnName="FK_EmpName" />
+          <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+          <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="HumanResourceModel.Setting">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="SetTimekeep" ColumnName="SetTimekeep" />
+          <ScalarProperty Name="SetBHTNEmp" ColumnName="SetBHTNEmp" />
+          <ScalarProperty Name="SetBHYTEmp" ColumnName="SetBHYTEmp" />
+          <ScalarProperty Name="SetBHXHEmp" ColumnName="SetBHXHEmp" />
+          <ScalarProperty Name="SetKPCDEmp" ColumnName="SetKPCDEmp" />
+          <ScalarProperty Name="SetBHTNComp" ColumnName="SetBHTNComp" />
+          <ScalarProperty Name="SetBHYTComp" ColumnName="SetBHYTComp" />
+          <ScalarProperty Name="SetBHXHComp" ColumnName="SetBHXHComp" />
+          <ScalarProperty Name="SetKPCDComp" ColumnName="SetKPCDComp" />
+          <ScalarProperty Name="SetSalaryType" ColumnName="SetSalaryType" />
+          <ScalarProperty Name="SetID" ColumnName="SetID" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeSheets">
+      <EntityTypeMapping TypeName="HumanResourceModel.TimeSheet">
+        <MappingFragment StoreEntitySet="TimeSheets">
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="TimeSheetSign" ColumnName="TimeSheetSign" />
+          <ScalarProperty Name="TimeSheetOutLate" ColumnName="TimeSheetOutLate" />
+          <ScalarProperty Name="TimeSheetOutSoon" ColumnName="TimeSheetOutSoon" />
+          <ScalarProperty Name="TimeSheetLate" ColumnName="TimeSheetLate" />
+          <ScalarProperty Name="TimeSheetWork" ColumnName="TimeSheetWork" />
+          <ScalarProperty Name="TimeSheetHourTotal" ColumnName="TimeSheetHourTotal" />
+          <ScalarProperty Name="TimeSheetCheckOut" ColumnName="TimeSheetCheckOut" />
+          <ScalarProperty Name="TimeSheetCheckIn" ColumnName="TimeSheetCheckIn" />
+          <ScalarProperty Name="TimeSheetShift" ColumnName="TimeSheetShift" />
+          <ScalarProperty Name="TimeSheetDay" ColumnName="TimeSheetDay" />
+          <ScalarProperty Name="TimeSheetDate" ColumnName="TimeSheetDate" />
+          <ScalarProperty Name="FK_EmpName" ColumnName="FK_EmpName" />
+          <ScalarProperty Name="FK_EmpCode" ColumnName="FK_EmpCode" />
+          <ScalarProperty Name="FK_EmpTimeWrkCode" ColumnName="FK_EmpTimeWrkCode" />
+          <ScalarProperty Name="FK_EmpID" ColumnName="FK_EmpID" />
+          <ScalarProperty Name="TimeSheetID" ColumnName="TimeSheetID" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wards">
+      <EntityTypeMapping TypeName="HumanResourceModel.Ward">
+        <MappingFragment StoreEntitySet="Wards">
+          <ScalarProperty Name="WardDesc" ColumnName="WardDesc" />
+          <ScalarProperty Name="WardCodeSearch" ColumnName="WardCodeSearch" />
+          <ScalarProperty Name="AAGuid" ColumnName="AAGuid" />
+          <ScalarProperty Name="FK_DistrictCode" ColumnName="FK_DistrictCode" />
+          <ScalarProperty Name="WardName" ColumnName="WardName" />
+          <ScalarProperty Name="WardCode" ColumnName="WardCode" />
+          <ScalarProperty Name="WardID" ColumnName="WardID" />
+          <ScalarProperty Name="AAOrder" ColumnName="AAOrder" />
+          <ScalarProperty Name="AASelection" ColumnName="AASelection" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreateDate" ColumnName="AACreateDate" />
+          <ScalarProperty Name="AACreate" ColumnName="AACreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
